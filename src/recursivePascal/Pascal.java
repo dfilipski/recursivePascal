@@ -49,10 +49,28 @@ public class Pascal {
     public String toString() {
         String out = "";
 
-        for (int[] row : triangle) {
-            out += Arrays.toString(row) + '\n';
+        String lastRow = rowToString(triangle.length - 1);
+        int lastRowLength = lastRow.length();
+        for (int i = 0; i < triangle.length - 1; ++i) {
+            String currentRow = rowToString(i);
+            int numSpaces = (lastRowLength - currentRow.length()) / 2;
+            String spaces = "";
+            for (int j = 0; j < numSpaces; ++j) {
+                spaces += " ";
+            }
+            out += spaces + currentRow + '\n';
         }
+        out += lastRow;
 
         return out;
     }
+
+    public String rowToString(int row) {
+        String out = "";
+        for (int i : triangle[row]) {
+            out += i + " ";
+        }
+        return out;
+    }
+
 }
