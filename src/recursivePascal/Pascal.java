@@ -50,7 +50,7 @@ public class Pascal {
         String out = "";
 
         for (int[] row : triangle) {
-            System.out.println(Arrays.toString(row));
+            out += Arrays.toString(row) + '\n';
         }
 
         return out;
