@@ -6,10 +6,10 @@ public class Driver {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.printf("How many rows of this glorious triangle would you like to generate? ");
+        System.out.print("How many rows of this glorious triangle would you like to generate? ");
         int rows = sc.nextInt();
         while (rows > 34 || rows < 0) { //Prevent integer overflows
-            System.out.printf("Not gonna work, bub. Pick a number less than 35 and greater than 0. ");
+            System.out.print("Not gonna work, bub. Pick a number less than 35 and greater than 0. ");
             rows = sc.nextInt();
         }
 
