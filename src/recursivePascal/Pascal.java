@@ -24,7 +24,7 @@ public class Pascal {
         for (int row = 1; row < triangle.length; ++row) {
             for (int col = 1; col < triangle[row].length - 1; ++col) {
                 if (triangle[row][col] == 0)
-                    triangle[row][col] = triangle[row - 1][col - 1] + triangle[row - 1][col];
+                    triangle[row][col] = recursiveGet(row, col);
             }
         }
     }
@@ -36,7 +36,7 @@ public class Pascal {
             return recursiveGet(r - 1, c) + recursiveGet(r - 1, c - 1);
     }
 
-    public void fill() {
+    public void fill() { //An iterative version I wrote in before doing it recursively.
         for (int row = 1; row < triangle.length; ++row) {
             for (int col = 1; col < triangle[row].length - 1; ++col) {
                 if (triangle[row][col] == 0)
