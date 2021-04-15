@@ -1,7 +1,5 @@
 package recursivePascal;
 
-import java.util.Arrays;
-
 public class Pascal {
     int[][] triangle;
 
@@ -53,7 +51,11 @@ public class Pascal {
         int lastRowLength = lastRow.length();
         for (int i = 0; i < triangle.length - 1; ++i) {
             String currentRow = rowToString(i);
-            int numSpaces = (lastRowLength - currentRow.length()) / 2;
+            int numSpaces = lastRowLength - currentRow.length();
+            if (numSpaces % 2 == 1)
+                numSpaces = numSpaces/2 + 1;
+            else
+                numSpaces /= 2;
             String spaces = "";
             for (int j = 0; j < numSpaces; ++j) {
                 spaces += " ";
